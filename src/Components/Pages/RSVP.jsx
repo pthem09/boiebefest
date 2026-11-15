@@ -272,6 +272,7 @@ export default function RSVP({ session }) {
                             onChange={(e) =>
                               handleGuestChange(guest.id, 'will_book_taxi', e.target.checked)
                             }
+                            required
                           />
                           <label className="form-check-label" htmlFor={`taxi-${guest.id}`}>
                             I acknowledge that I will arrange my own transportation to and from Louchrew Estate.
@@ -291,6 +292,7 @@ export default function RSVP({ session }) {
                                 e.target.checked
                               )
                             }
+                            required
                           />
                           <label className="form-check-label" htmlFor={`hotel-${guest.id}`}>
                             I acknowledge that I do NOT need to book a hotel, as Paul and Siman booked Louchrew Estate for me!
