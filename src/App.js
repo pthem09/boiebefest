@@ -5,10 +5,12 @@ import Home from "./Components/Pages/Home";
 import SignIn from './Components/Pages/SignIn';
 import RSVP from './Components/Pages/RSVP';
 import ContactUs from './Components/Pages/ContactUs';
+import Navbar from './Components/Navbar/Navbar';
 
 export default function App() {
   return (
     <BrowserRouter basename="/boiebefest">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
