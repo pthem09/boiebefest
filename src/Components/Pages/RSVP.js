@@ -5,7 +5,7 @@ export default function RSVP() {
     return (
         <body>
             <Navbar />
-            <h1>RSVP update</h1>
+            <h1>RSVP</h1>
         </body>
     )
 }
