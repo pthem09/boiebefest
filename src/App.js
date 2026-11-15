@@ -7,6 +7,7 @@ import { supabase } from './supabaseClient';
 import Home from "./Components/Pages/Home";
 import RSVP from './Components/Pages/RSVP';
 import ContactUs from './Components/Pages/ContactUs';
+import AdminDashboard from './Components/Pages/AdminDashboard';
 import Navbar from './Components/Navbar/Navbar';
 import LoginPage from './LoginPage';
 
@@ -49,6 +50,7 @@ export default function App() {
             <Route path="/" element={<Home session={session} />} />
             <Route path="/rsvp" element={<RSVP session={session} />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/admin" element={<AdminDashboard />} />
             {/* Redirect /sign-in or any unknown path to Home once logged in */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
