@@ -9,7 +9,7 @@ import Navbar from './Components/Navbar/Navbar';
 
 export default function App() {
   return (
-    <BrowserRouter basename="/boiebefest">
+    <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
