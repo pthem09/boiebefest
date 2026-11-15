@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/boiebefest/static/css/main.b926d5a2.css",
-    "main.js": "/boiebefest/static/js/main.6b58dbd6.js",
-    "static/js/453.b30ab675.chunk.js": "/boiebefest/static/js/453.b30ab675.chunk.js",
-    "index.html": "/boiebefest/index.html",
-    "main.b926d5a2.css.map": "/boiebefest/static/css/main.b926d5a2.css.map",
-    "main.6b58dbd6.js.map": "/boiebefest/static/js/main.6b58dbd6.js.map",
-    "453.b30ab675.chunk.js.map": "/boiebefest/static/js/453.b30ab675.chunk.js.map"
+    "main.css": "/static/css/main.b926d5a2.css",
+    "main.js": "/static/js/main.86213fce.js",
+    "static/js/453.b30ab675.chunk.js": "/static/js/453.b30ab675.chunk.js",
+    "index.html": "/index.html",
+    "main.b926d5a2.css.map": "/static/css/main.b926d5a2.css.map",
+    "main.86213fce.js.map": "/static/js/main.86213fce.js.map",
+    "453.b30ab675.chunk.js.map": "/static/js/453.b30ab675.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b926d5a2.css",
-    "static/js/main.6b58dbd6.js"
+    "static/js/main.86213fce.js"
   ]
 }
