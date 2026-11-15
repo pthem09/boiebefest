@@ -252,6 +252,7 @@ export default function RSVP({ session }) {
                                 e.target.value
                               )
                             }
+                            required
                           >
                             <option value="">Select an entrée...</option>
                             {DINNER_OPTIONS.map((choice) => (
@@ -311,6 +312,7 @@ export default function RSVP({ session }) {
                             onChange={(e) =>
                               handleGuestChange(guest.id, 'food_to_stock', e.target.value)
                             }
+                            required
                           />
                           <small className="text-muted">
                             {(guest.food_to_stock || '').length}/250 characters
