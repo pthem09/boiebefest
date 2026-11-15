@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Navbar() {
 
     return (
@@ -9,16 +11,16 @@ export default function Navbar() {
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link" href="./">Details</a>
+                        <Link className="nav-link" to="/">Details</Link>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="./sign-in">Sign in</a>
+                        <Link className="nav-link" to="/sign-in">Sign in</Link>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="./rsvp">RSVP</a>
+                        <Link className="nav-link" to="/rsvp">RSVP</Link>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="./contact-us">Contact Us</a>
+                        <Link className="nav-link" to="/contact-us">Contact Us</Link>
                     </li>
                     
                 </ul>
