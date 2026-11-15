@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/boiebefest/static/css/main.b926d5a2.css",
-    "main.js": "/boiebefest/static/js/main.e39b79b2.js",
+    "main.js": "/boiebefest/static/js/main.16721154.js",
     "static/js/453.b30ab675.chunk.js": "/boiebefest/static/js/453.b30ab675.chunk.js",
     "index.html": "/boiebefest/index.html",
     "main.b926d5a2.css.map": "/boiebefest/static/css/main.b926d5a2.css.map",
-    "main.e39b79b2.js.map": "/boiebefest/static/js/main.e39b79b2.js.map",
+    "main.16721154.js.map": "/boiebefest/static/js/main.16721154.js.map",
     "453.b30ab675.chunk.js.map": "/boiebefest/static/js/453.b30ab675.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b926d5a2.css",
-    "static/js/main.e39b79b2.js"
+    "static/js/main.16721154.js"
   ]
 }
