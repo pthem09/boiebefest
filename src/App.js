@@ -8,7 +8,7 @@ import ContactUs from './Components/Pages/ContactUs';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/boiebefest">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
