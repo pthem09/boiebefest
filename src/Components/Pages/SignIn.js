@@ -4,7 +4,6 @@ export default function SignIn() {
 
     return (
         <body>
-            <Navbar />
             <h1>Empty</h1>
         </body>
     )
