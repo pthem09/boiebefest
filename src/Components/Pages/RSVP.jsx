@@ -93,9 +93,56 @@ export default function RSVP({ session }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSaving(true);
     setMessage(null);
     setError(null);
+
+    // Validate every guest before saving (works even if accordion cards are collapsed)
+    for (const [index, guest] of guests.entries()) {
+      const label = guest.full_name?.trim() || `Guest ${index + 1}`;
+
+      if (!guest.full_name || !guest.full_name.trim()) {
+        setOpenGuestId(guest.id);
+        setError(`Please enter a full name for Guest ${index + 1}.`);
+        return;
+      }
+
+      // Skip all other requirements if this guest is NOT attending
+      if (!guest.is_coming) {
+        continue;
+      }
+
+      const hasSelectedDay =
+        guest.is_coming_friday ||
+        guest.is_coming_saturday ||
+        guest.is_coming_sunday ||
+        guest.is_coming_monday;
+
+      if (!hasSelectedDay) {
+        setOpenGuestId(guest.id);
+        setError(`Please select at least one day that ${label} will attend.`);
+        return;
+      }
+
+      if (!guest.wedding_dinner_choice) {
+        setOpenGuestId(guest.id);
+        setError(`Please select a wedding dinner choice for ${label}.`);
+        return;
+      }
+
+      if (!guest.will_book_taxi) {
+        setOpenGuestId(guest.id);
+        setError(`Please acknowledge the transportation arrangement for ${label}.`);
+        return;
+      }
+
+      if (!guest.will_not_book_hotel) {
+        setOpenGuestId(guest.id);
+        setError(`Please acknowledge the Louchrew Estate hotel arrangement for ${label}.`);
+        return;
+      }
+    }
+
+    setSaving(true);
 
     try {
       for (const guest of guests) {
