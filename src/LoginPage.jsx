@@ -5,8 +5,6 @@ import { supabase } from './supabaseClient';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [usePassword, setUsePassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -17,29 +15,26 @@ export default function LoginPage() {
     setMessage('');
     setError('');
 
-    if (usePassword) {
-      // Option A: Standard Email + Password sign-in
-      const { error } = await supabase.auth.signInWithPassword({
-        email: email.trim().toLowerCase(),
-        password,
-      });
+    const cleanEmail = email.trim().toLowerCase();
 
-      if (error) setError(error.message);
-    } else {
-      // Option B: Passwordless Magic Link (sends a fresh login link to invited emails)
-      const { error } = await supabase.auth.signInWithOtp({
-        email: email.trim().toLowerCase(),
-        options: {
-          shouldCreateUser: false, // Prevents uninvited strangers from creating accounts
-          emailRedirectTo: window.location.origin,
-        },
-      });
+    const { error } = await supabase.auth.signInWithOtp({
+      email: cleanEmail,
+      options: {
+        shouldCreateUser: false,
+        emailRedirectTo: window.location.origin,
+      },
+    });
 
-      if (error) {
-        setError(error.message);
+    if (error) {
+      if (error.message.toLowerCase().includes('signups not allowed')) {
+        setError(
+          'Your account has not been activated yet. Please click the original invitation link sent to your email first (check your spam folder if needed).'
+        );
       } else {
-        setMessage('Check your email for a login link!');
+        setError(error.message);
       }
+    } else {
+      setMessage('Check your email for a login link!');
     }
 
     setLoading(false);
@@ -63,42 +58,14 @@ export default function LoginPage() {
           />
         </div>
 
-        {usePassword && (
-          <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.25rem' }}>Password</label>
-            <input
-              type="password"
-              required
-              placeholder="Your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={{ width: '100%', padding: '0.5rem' }}
-            />
-          </div>
-        )}
-
         <button
           type="submit"
           disabled={loading}
           style={{ width: '100%', padding: '0.75rem', cursor: 'pointer' }}
         >
-          {loading ? 'Please wait...' : usePassword ? 'Sign In' : 'Send Login Link'}
+          {loading ? 'Please wait...' : 'Send Login Link'}
         </button>
       </form>
-
-      <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-        <button
-          type="button"
-          onClick={() => {
-            setUsePassword(!usePassword);
-            setError('');
-            setMessage('');
-          }}
-          style={{ background: 'none', border: 'none', color: '#0066cc', textDecoration: 'underline', cursor: 'pointer' }}
-        >
-          {usePassword ? 'Sign in with an email link instead' : 'Sign in with a password instead'}
-        </button>
-      </div>
 
       {message && <p style={{ color: 'green', marginTop: '1rem' }}>{message}</p>}
       {error && <p style={{ color: 'crimson', marginTop: '1rem' }}>{error}</p>}
