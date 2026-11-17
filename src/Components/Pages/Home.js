@@ -175,6 +175,11 @@ export default function Home() {
             <p className="mb-0">
               Please <strong>do NOT book a hotel</strong> near the venue—you will be staying on-site at the estate with us.
             </p>
+            <br />
+            <h5 className="alert-heading fw-bold">Attire</h5>
+            <p className="mb-0">
+              Dress to dazzle. Also, bring hiking shoes, as we plan to explore Louchrew Estate!
+            </p>
           </div>
 
           <div className="row g-4">
