@@ -175,11 +175,6 @@ export default function Home() {
             <p className="mb-0">
               Please <strong>do NOT book a hotel</strong> near the venue—you will be staying on-site at the estate with us.
             </p>
-            <br />
-            <h5 className="alert-heading fw-bold">Attire</h5>
-            <p>
-              We respectfully request formal attire for the ceremony. Bring casual, comfortable clothes for the rest of the weekend, and maybe some hiking shoes!
-            </p>
           </div>
 
           <div className="row g-4">
