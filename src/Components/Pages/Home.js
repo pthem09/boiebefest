@@ -13,9 +13,16 @@ export default function Home() {
           <span className="badge bg-primary text-uppercase mb-2 px-3 py-2">
             Boiebefest 2027 • County Meath, Ireland
           </span>
+          <br></br>
+          <span className="badge bg-success text-uppercase mb-2 px-3 py-2">
+            raze the roof
+          </span>
           <h1 className="display-4 fw-bold mb-3">Come Celebrate With Us!</h1>
           <p className="lead text-muted mb-4">
-            Paul & Siman cordially invite you to celebrate our love and marriage.
+            We cordially invite you to celebrate our love and marriage.
+          </p>
+          <p className="text-muted fst-italic">
+            -- Paul & Siman
           </p>
 
           {/* Dynamic Photo Carousel */}
@@ -109,6 +116,10 @@ export default function Home() {
                 Friday, 1 October – Monday, 4 October 2027
               </p>
               <div className="alert alert-info py-2 px-3 mt-3 mb-0">
+                <strong>Arrival:</strong>
+                <br />
+                After 4pm Friday, 1 October 2027
+                <br />
                 <strong>Rehearsal Dinner:</strong>
                 <br />
                 Saturday, 2 October 2027
@@ -116,6 +127,10 @@ export default function Home() {
                 <strong>Wedding Ceremony &amp; Dinner:</strong>
                 <br />
                 Sunday, 3 October 2027
+                <br />
+                <strong>Departure:</strong>
+                <br />
+                Monday, 4 October 2027 after breakfast
               </div>
             </div>
           </div>
@@ -159,6 +174,11 @@ export default function Home() {
             <h5 className="alert-heading fw-bold">Accommodation Is Taken Care Of For The Entire Wedding Weekend!</h5>
             <p className="mb-0">
               Please <strong>do NOT book a hotel</strong> near the venue—you will be staying on-site at the estate with us.
+            </p>
+            <br />
+            <h5 className="alert-heading fw-bold">Attire</h5>
+            <p>
+              We respectfully request formal attire for the ceremony. Bring casual, comfortable clothes for the rest of the weekend, and maybe some hiking shoes!
             </p>
           </div>
 
