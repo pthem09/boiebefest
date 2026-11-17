@@ -214,7 +214,7 @@ export default function AdminDashboard() {
               {declinedGuests.length === 0 ? (
                 <tr>
                   <td colSpan="3" className="text-center py-4 text-muted">
-                    No declines yet.
+                    No declines!
                   </td>
                 </tr>
               ) : (
